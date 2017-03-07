@@ -1,0 +1,72 @@
+<script type="text/javascript">
+  var students =[];
+  students.new_student = function(name,age,marks) {
+    var obj = {};
+    obj.name = name;
+    obj.age = age;
+    obj.marks = marks;
+    students.push(obj)
+  }
+
+  students.search = function (name) {
+      for (var i = 0; i < students.length; i++) {
+        if(students[i].name==name)
+          console.log("Age :",students[i].age);
+      }
+  }
+
+  students.percentage = function () {
+    for (var i = 0; i < students.length; i++) {
+          var student_percentage = calculate_percentage(students[i].marks);
+          console.log(students[i].name,student_percentage);
+      }
+  }
+
+  function calculate_percentage(arr) {
+    total=0;
+    arr.forEach(function(element) {
+        this.total+=element;
+      });
+    return (total/arr.length);
+  }
+
+
+  students.new_student('sameer',24,[40,40,40]);
+  students.new_student('mahesh',26,[60,40,40]);
+
+</script>
+
+<script type="text/javascript">
+
+  function Animal(hands,legs) {
+    this.hands=hands;
+    this.legs=legs;
+  }
+
+  Animal.prototype.get_voice = function() {
+    console.log(this.voice)
+  }
+
+  Animal.prototype.is_dreaming = function() {
+    console.log(this.can_dream);
+  }
+
+  function Dog(hands=0,legs=4,voice='bhow bhow',behave='walks on 4 legs') {
+    Animal.call(this,hands,legs);
+    this.voice = voice;
+    this.behave= behave;
+  }
+
+  function Human(hands=2,legs=2,voice='talk talk',can_dream=true) {
+    Animal.call(this,hands,legs);
+    this.voice = voice;
+    this.can_dream = can_dream;
+  }
+
+  Human.prototype = Object.create(Animal.prototype);
+  Human.prototype.constructor = Human;
+
+  Dog.prototype = Object.create(Animal.prototype);
+  Dog.prototype.constructor = Dog;
+
+</script>
