@@ -1,6 +1,6 @@
 <script type="text/javascript">
   var students =[];
-  students.new_student = function(name,age,marks) {
+  students.newStudent = function(name,age,marks) {
     var obj = {};
     obj.name = name;
     obj.age = age;
@@ -17,12 +17,12 @@
 
   students.percentage = function () {
     for (var i = 0; i < students.length; i++) {
-          var student_percentage = calculate_percentage(students[i].marks);
+          var student_percentage = calculatePercentage(students[i].marks);
           console.log(students[i].name,student_percentage);
       }
   }
 
-  function calculate_percentage(arr) {
+  function calculatePercentage(arr) {
     total=0;
     arr.forEach(function(element) {
         this.total+=element;
@@ -31,8 +31,8 @@
   }
 
 
-  students.new_student('sameer',24,[40,40,40]);
-  students.new_student('mahesh',26,[60,40,40]);
+  students.newStudent('sameer',24,[40,40,40]);
+  students.newStudent('mahesh',26,[60,40,40]);
 
 </script>
 
@@ -43,11 +43,11 @@
     this.legs=legs;
   }
 
-  Animal.prototype.get_voice = function() {
+  Animal.prototype.getVoice = function() {
     console.log(this.voice)
   }
 
-  Animal.prototype.is_dreaming = function() {
+  Animal.prototype.isDreaming = function() {
     console.log(this.can_dream);
   }
 
