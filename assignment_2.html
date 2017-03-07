@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  var students =[];
+  var students = [];
   students.newStudent = function(name,age,marks) {
     var obj = {};
     obj.name = name;
@@ -10,24 +10,24 @@
 
   students.search = function (name) {
       for (var i = 0; i < students.length; i++) {
-        if(students[i].name==name)
+        if(students[i].name == name)
           console.log("Age :",students[i].age);
       }
   }
 
   students.percentage = function () {
     for (var i = 0; i < students.length; i++) {
-          var student_percentage = calculatePercentage(students[i].marks);
-          console.log(students[i].name,student_percentage);
+          var studentPercentage = calculatePercentage(students[i].marks);
+          console.log(students[i].name,studentPercentage);
       }
   }
 
   function calculatePercentage(arr) {
-    total=0;
+    total = 0;
     arr.forEach(function(element) {
-        this.total+=element;
+        this.total += element;
       });
-    return (total/arr.length);
+    return (total / arr.length);
   }
 
 
@@ -39,8 +39,8 @@
 <script type="text/javascript">
 
   function Animal(hands,legs) {
-    this.hands=hands;
-    this.legs=legs;
+    this.hands = hands;
+    this.legs = legs;
   }
 
   Animal.prototype.getVoice = function() {
@@ -48,19 +48,19 @@
   }
 
   Animal.prototype.isDreaming = function() {
-    console.log(this.can_dream);
+    console.log(this.canDream);
   }
 
-  function Dog(hands=0,legs=4,voice='bhow bhow',behave='walks on 4 legs') {
+  function Dog(hands = 0,legs = 4,voice = 'bhow bhow',behave = 'walks on 4 legs') {
     Animal.call(this,hands,legs);
     this.voice = voice;
-    this.behave= behave;
+    this.behave = behave;
   }
 
-  function Human(hands=2,legs=2,voice='talk talk',can_dream=true) {
+  function Human(hands = 2,legs = 2,voice = 'talk talk',canDream = true) {
     Animal.call(this,hands,legs);
     this.voice = voice;
-    this.can_dream = can_dream;
+    this.canDream = canDream;
   }
 
   Human.prototype = Object.create(Animal.prototype);
