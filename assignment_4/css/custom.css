@@ -1,0 +1,42 @@
+.switch-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 400px;
+  min-width: 400px;
+  position: relative;
+  background: red;
+}
+
+.center {
+  top:45%;
+  left: 40%;
+  position: absolute;
+}
+
+.switch-rows {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.switch-rows ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.rows li {
+}
+
+.switch-rows ul li {
+  /*padding: 10px;*/
+  height: 20px;
+  width: 200px;
+}
+
+.switch-rows ul li:nth-child(even) {
+  background: black;
+}
+
+.switch-rows ul li:nth-child(odd) {
+  background: grey;
+}
